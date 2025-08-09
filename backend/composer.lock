@@ -4,8 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42375cf8b6b964e0398fa8aa81811bff",
+    "content-hash": "e2461b15d20dfe70026eb6cb62edca1f",
     "packages": [
+        {
+            "name": "bordoni/phpass",
+            "version": "0.3.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bordoni/phpass.git",
+                "reference": "12f8f5cc03ebb7efd69554f104afe9aa1aa46e1a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bordoni/phpass/zipball/12f8f5cc03ebb7efd69554f104afe9aa1aa46e1a",
+                "reference": "12f8f5cc03ebb7efd69554f104afe9aa1aa46e1a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "replace": {
+                "hautelook/phpass": "0.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Hautelook": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Public Domain"
+            ],
+            "authors": [
+                {
+                    "name": "Solar Designer",
+                    "email": "solar@openwall.com",
+                    "homepage": "http://openwall.com/phpass/"
+                },
+                {
+                    "name": "Gustavo Bordoni",
+                    "email": "gustavo@bordoni.me",
+                    "homepage": "https://bordoni.me"
+                }
+            ],
+            "description": "Portable PHP password hashing framework",
+            "homepage": "http://github.com/bordoni/phpass/",
+            "keywords": [
+                "blowfish",
+                "crypt",
+                "password",
+                "security"
+            ],
+            "support": {
+                "issues": "https://github.com/bordoni/phpass/issues",
+                "source": "https://github.com/bordoni/phpass/tree/0.3.6"
+            },
+            "time": "2012-08-31T00:00:00+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.13.1",
@@ -509,6 +565,69 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "fakerphp/faker",
+            "version": "v1.24.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5",
+                "reference": "e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "psr/container": "^1.0 || ^2.0",
+                "symfony/deprecation-contracts": "^2.2 || ^3.0"
+            },
+            "conflict": {
+                "fzaninotto/faker": "*"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "doctrine/persistence": "^1.3 || ^2.0",
+                "ext-intl": "*",
+                "phpunit/phpunit": "^9.5.26",
+                "symfony/phpunit-bridge": "^5.4.16"
+            },
+            "suggest": {
+                "doctrine/orm": "Required to use Faker\\ORM\\Doctrine",
+                "ext-curl": "Required by Faker\\Provider\\Image to download images.",
+                "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
+                "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
+                "ext-mbstring": "Required for multibyte Unicode string functionality."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/FakerPHP/Faker/issues",
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.24.1"
+            },
+            "time": "2024-11-21T13:46:39+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -1055,17 +1174,82 @@
             "time": "2025-02-03T10:55:03+00:00"
         },
         {
-            "name": "laravel/framework",
-            "version": "v12.21.0",
+            "name": "jgrossi/corcel",
+            "version": "v9.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "ac8c4e73bf1b5387b709f7736d41427e6af1c93b"
+                "url": "https://github.com/corcel/corcel.git",
+                "reference": "aa06fc527ab6dcfe46cd0b34030ac152b2b1f13e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ac8c4e73bf1b5387b709f7736d41427e6af1c93b",
-                "reference": "ac8c4e73bf1b5387b709f7736d41427e6af1c93b",
+                "url": "https://api.github.com/repos/corcel/corcel/zipball/aa06fc527ab6dcfe46cd0b34030ac152b2b1f13e",
+                "reference": "aa06fc527ab6dcfe46cd0b34030ac152b2b1f13e",
+                "shasum": ""
+            },
+            "require": {
+                "bordoni/phpass": "0.3.*",
+                "fakerphp/faker": "^1.24",
+                "illuminate/database": "^12.0",
+                "illuminate/filesystem": "^12.0",
+                "illuminate/support": "^12.0",
+                "php": "^8.2",
+                "thunderer/shortcode": "^0.7.6"
+            },
+            "replace": {
+                "juniorgrossi/corcel": "self.version"
+            },
+            "require-dev": {
+                "laravel/legacy-factories": "^1.0",
+                "mockery/mockery": "^1.6.12",
+                "orchestra/testbench": "^10.1",
+                "symfony/thanks": "^1.4"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Corcel\\Laravel\\CorcelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Corcel\\": "src/",
+                    "Corcel\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Junior Grossi",
+                    "email": "juniorgro@gmail.com",
+                    "homepage": "http://jgrossi.com"
+                }
+            ],
+            "description": "Use WordPress backend with Laravel or any PHP framework",
+            "homepage": "http://github.com/corcel/corcel",
+            "support": {
+                "issues": "https://github.com/corcel/corcel/issues",
+                "source": "https://github.com/corcel/corcel/tree/v9.0.0"
+            },
+            "time": "2025-03-19T13:06:35+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v12.22.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "d33ee45184126f32f593d4b809a846ed88a1dc43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d33ee45184126f32f593d4b809a846ed88a1dc43",
+                "reference": "d33ee45184126f32f593d4b809a846ed88a1dc43",
                 "shasum": ""
             },
             "require": {
@@ -1267,7 +1451,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-07-22T15:41:55+00:00"
+            "time": "2025-08-08T13:58:03+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -2175,16 +2359,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.10.1",
+            "version": "3.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "1fd1935b2d90aef2f093c5e35f7ae1257c448d00"
+                "reference": "76b5c07b8a9d2025ed1610e14cef1f3fd6ad2c24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/1fd1935b2d90aef2f093c5e35f7ae1257c448d00",
-                "reference": "1fd1935b2d90aef2f093c5e35f7ae1257c448d00",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/76b5c07b8a9d2025ed1610e14cef1f3fd6ad2c24",
+                "reference": "76b5c07b8a9d2025ed1610e14cef1f3fd6ad2c24",
                 "shasum": ""
             },
             "require": {
@@ -2276,7 +2460,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-21T15:19:35+00:00"
+            "time": "2025-08-02T09:36:06+00:00"
         },
         {
             "name": "nette/schema",
@@ -2342,29 +2526,29 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.0.7",
+            "version": "v4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "e67c4061eb40b9c113b218214e42cb5a0dda28f2"
+                "reference": "c930ca4e3cf4f17dcfb03037703679d2396d2ede"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/e67c4061eb40b9c113b218214e42cb5a0dda28f2",
-                "reference": "e67c4061eb40b9c113b218214e42cb5a0dda28f2",
+                "url": "https://api.github.com/repos/nette/utils/zipball/c930ca4e3cf4f17dcfb03037703679d2396d2ede",
+                "reference": "c930ca4e3cf4f17dcfb03037703679d2396d2ede",
                 "shasum": ""
             },
             "require": {
-                "php": "8.0 - 8.4"
+                "php": "8.0 - 8.5"
             },
             "conflict": {
                 "nette/finder": "<3",
                 "nette/schema": "<1.2.2"
             },
             "require-dev": {
-                "jetbrains/phpstorm-attributes": "dev-master",
+                "jetbrains/phpstorm-attributes": "^1.2",
                 "nette/tester": "^2.5",
-                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-nette": "^2.0@stable",
                 "tracy/tracy": "^2.9"
             },
             "suggest": {
@@ -2382,6 +2566,9 @@
                 }
             },
             "autoload": {
+                "psr-4": {
+                    "Nette\\": "src"
+                },
                 "classmap": [
                     "src/"
                 ]
@@ -2422,9 +2609,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.0.7"
+                "source": "https://github.com/nette/utils/tree/v4.0.8"
             },
-            "time": "2025-06-03T04:55:08+00:00"
+            "time": "2025-08-06T21:43:34+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3060,16 +3247,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.12.9",
+            "version": "v0.12.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "1b801844becfe648985372cb4b12ad6840245ace"
+                "reference": "6e80abe6f2257121f1eb9a4c55bf29d921025b22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/1b801844becfe648985372cb4b12ad6840245ace",
-                "reference": "1b801844becfe648985372cb4b12ad6840245ace",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/6e80abe6f2257121f1eb9a4c55bf29d921025b22",
+                "reference": "6e80abe6f2257121f1eb9a4c55bf29d921025b22",
                 "shasum": ""
             },
             "require": {
@@ -3119,12 +3306,11 @@
             "authors": [
                 {
                     "name": "Justin Hileman",
-                    "email": "justin@justinhileman.info",
-                    "homepage": "http://justinhileman.com"
+                    "email": "justin@justinhileman.info"
                 }
             ],
             "description": "An interactive shell for modern PHP.",
-            "homepage": "http://psysh.org",
+            "homepage": "https://psysh.org",
             "keywords": [
                 "REPL",
                 "console",
@@ -3133,9 +3319,9 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
-                "source": "https://github.com/bobthecow/psysh/tree/v0.12.9"
+                "source": "https://github.com/bobthecow/psysh/tree/v0.12.10"
             },
-            "time": "2025-06-23T02:35:06+00:00"
+            "time": "2025-08-04T12:39:37+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5614,6 +5800,62 @@
             "time": "2025-07-29T20:02:46+00:00"
         },
         {
+            "name": "thunderer/shortcode",
+            "version": "v0.7.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thunderer/Shortcode.git",
+                "reference": "9f81424b4909007483d93c5defc0917d8a58debd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thunderer/Shortcode/zipball/9f81424b4909007483d93c5defc0917d8a58debd",
+                "reference": "9f81424b4909007483d93c5defc0917d8a58debd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": ">=4.1",
+                "symfony/yaml": ">=2.0"
+            },
+            "suggest": {
+                "ext-dom": "if you want to use XML serializer",
+                "ext-json": "if you want to use JSON serializer",
+                "symfony/yaml": "if you want to use YAML serializer"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Thunder\\Shortcode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tomasz Kowalczyk",
+                    "email": "tomasz@kowalczyk.cc"
+                }
+            ],
+            "description": "Advanced shortcode (BBCode) parser and engine for PHP",
+            "keywords": [
+                "bbcode",
+                "engine",
+                "library",
+                "parser",
+                "shortcode"
+            ],
+            "support": {
+                "issues": "https://github.com/thunderer/Shortcode/issues",
+                "source": "https://github.com/thunderer/Shortcode/tree/v0.7.6"
+            },
+            "time": "2024-12-15T21:57:40+00:00"
+        },
+        {
             "name": "tijsverkoyen/css-to-inline-styles",
             "version": "v2.3.0",
             "source": {
@@ -5887,80 +6129,17 @@
     ],
     "packages-dev": [
         {
-            "name": "fakerphp/faker",
-            "version": "v1.24.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5",
-                "reference": "e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.4 || ^8.0",
-                "psr/container": "^1.0 || ^2.0",
-                "symfony/deprecation-contracts": "^2.2 || ^3.0"
-            },
-            "conflict": {
-                "fzaninotto/faker": "*"
-            },
-            "require-dev": {
-                "bamarni/composer-bin-plugin": "^1.4.1",
-                "doctrine/persistence": "^1.3 || ^2.0",
-                "ext-intl": "*",
-                "phpunit/phpunit": "^9.5.26",
-                "symfony/phpunit-bridge": "^5.4.16"
-            },
-            "suggest": {
-                "doctrine/orm": "Required to use Faker\\ORM\\Doctrine",
-                "ext-curl": "Required by Faker\\Provider\\Image to download images.",
-                "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
-                "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
-                "ext-mbstring": "Required for multibyte Unicode string functionality."
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "support": {
-                "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.24.1"
-            },
-            "time": "2024-11-21T13:46:39+00:00"
-        },
-        {
             "name": "filp/whoops",
-            "version": "2.18.3",
+            "version": "2.18.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "59a123a3d459c5a23055802237cb317f609867e5"
+                "reference": "d2102955e48b9fd9ab24280a7ad12ed552752c4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/59a123a3d459c5a23055802237cb317f609867e5",
-                "reference": "59a123a3d459c5a23055802237cb317f609867e5",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/d2102955e48b9fd9ab24280a7ad12ed552752c4d",
+                "reference": "d2102955e48b9fd9ab24280a7ad12ed552752c4d",
                 "shasum": ""
             },
             "require": {
@@ -6010,7 +6189,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.18.3"
+                "source": "https://github.com/filp/whoops/tree/2.18.4"
             },
             "funding": [
                 {
@@ -6018,7 +6197,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-16T00:02:10+00:00"
+            "time": "2025-08-08T12:00:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -7040,16 +7219,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.5.28",
+            "version": "11.5.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "93f30aa3889e785ac63493d4976df0ae9fdecb60"
+                "reference": "804ac91b99e3a36a23f1584a9c4347fd69b0a384"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/93f30aa3889e785ac63493d4976df0ae9fdecb60",
-                "reference": "93f30aa3889e785ac63493d4976df0ae9fdecb60",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/804ac91b99e3a36a23f1584a9c4347fd69b0a384",
+                "reference": "804ac91b99e3a36a23f1584a9c4347fd69b0a384",
                 "shasum": ""
             },
             "require": {
@@ -7059,7 +7238,7 @@
                 "ext-mbstring": "*",
                 "ext-xml": "*",
                 "ext-xmlwriter": "*",
-                "myclabs/deep-copy": "^1.13.3",
+                "myclabs/deep-copy": "^1.13.4",
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.2",
@@ -7076,7 +7255,7 @@
                 "sebastian/exporter": "^6.3.0",
                 "sebastian/global-state": "^7.0.2",
                 "sebastian/object-enumerator": "^6.0.1",
-                "sebastian/type": "^5.1.2",
+                "sebastian/type": "^5.1.3",
                 "sebastian/version": "^5.0.2",
                 "staabm/side-effects-detector": "^1.0.5"
             },
@@ -7121,7 +7300,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.28"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.29"
             },
             "funding": [
                 {
@@ -7145,7 +7324,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-07-31T07:10:28+00:00"
+            "time": "2025-08-09T07:11:30+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -7976,16 +8155,16 @@
         },
         {
             "name": "sebastian/type",
-            "version": "5.1.2",
+            "version": "5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/type.git",
-                "reference": "a8a7e30534b0eb0c77cd9d07e82de1a114389f5e"
+                "reference": "f77d2d4e78738c98d9a68d2596fe5e8fa380f449"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/a8a7e30534b0eb0c77cd9d07e82de1a114389f5e",
-                "reference": "a8a7e30534b0eb0c77cd9d07e82de1a114389f5e",
+                "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/f77d2d4e78738c98d9a68d2596fe5e8fa380f449",
+                "reference": "f77d2d4e78738c98d9a68d2596fe5e8fa380f449",
                 "shasum": ""
             },
             "require": {
@@ -8021,15 +8200,27 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/type/issues",
                 "security": "https://github.com/sebastianbergmann/type/security/policy",
-                "source": "https://github.com/sebastianbergmann/type/tree/5.1.2"
+                "source": "https://github.com/sebastianbergmann/type/tree/5.1.3"
             },
             "funding": [
                 {
                     "url": "https://github.com/sebastianbergmann",
                     "type": "github"
+                },
+                {
+                    "url": "https://liberapay.com/sebastianbergmann",
+                    "type": "liberapay"
+                },
+                {
+                    "url": "https://thanks.dev/u/gh/sebastianbergmann",
+                    "type": "thanks_dev"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/sebastian/type",
+                    "type": "tidelift"
                 }
             ],
-            "time": "2025-03-18T13:35:50+00:00"
+            "time": "2025-08-09T06:55:48+00:00"
         },
         {
             "name": "sebastian/version",
