@@ -104,6 +104,12 @@ return [
             explode(',', (string) env('APP_PREVIOUS_KEYS', ''))
         ),
     ],
+    // 'providers' => [
+    // /*
+    //  * Package Service Providers...
+    //  */
+    // Corcel\Laravel\CorcelServiceProvider::class,
+    // ],
 
     /*
     |--------------------------------------------------------------------------
