@@ -20,9 +20,8 @@ class User extends CorcelUser
      */
     protected $fillable = [
         'ID',
-        'user_email',
-        'user_pass',
-        'display_name',
+        'email',
+        'password',
     ];
 
     /**
@@ -31,7 +30,7 @@ class User extends CorcelUser
      * @var list<string>
      */
     protected $hidden = [
-        'user_pass',
+        'passord',
         'remember_token',
     ];
 
@@ -44,7 +43,7 @@ class User extends CorcelUser
     {
         return [
             'email_verified_at' => 'datetime',
-            'user_pass' => 'hashed',
+            'password' => 'hashed',
         ];
     }
 }

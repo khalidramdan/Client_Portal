@@ -1,12 +1,12 @@
 "use client";
-import { ChevronLeftIcon, EyeCloseIcon, EyeIcon } from "@/icons";
-import Link from "next/link";
 import React, { useState } from "react";
 import "@/app/styles/global.css";
-import { z } from "zod"
+import { z } from "zod";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Button } from "@/components/ui/button"
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
+import axios from "axios";
+import Cookies from 'js-cookie';
 import {
   Form,
   FormControl,
@@ -17,13 +17,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useRouter } from "next/navigation";
 //this is the form validation schema
 const formSchema = z.object({
   email: z.string().email().min(2).max(30),
   password: z.string().min(8).max(30),
 })
-// end of form validation schema
 export default function SignInForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,9 +34,40 @@ export default function SignInForm() {
   })
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+ const handleLogin = async (data: z.infer<typeof formSchema>) => {
+    // Les valeurs sont dans `data.email` et `data.password`
+    // console.log('Données envoyées à Laravel:', data);
+
+    try {
+    const access_token = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
+    console.log(access_token); // Étape 1
+    const response = await axios.post('http://localhost:8000/api/login', {
+      email: data.email,
+      password: data.password,
+    });
+
+    console.log('2. Réponse reçue du serveur:', response.data); // Étape 2
+
+    const { user } = response.data;
+
+    if (access_token) {
+      localStorage.setItem('user', JSON.stringify(user));
+      // localStorage.setItem('access_token', access_token);
+      Cookies.set('access_token', access_token, { expires: 7 });
+      console.log('3. Token sauvegardé. Préparation de la redirection...'); // Étape 3
+
+      router.push('/dashboard');
+      
+      console.log('4. Redirection vers /dashboard demandée.'); // Étape 4
+    } else {
+      console.error("ERREUR: Le token n'a pas été reçu du serveur.");
+    }
+
+  } catch (err) {
+    console.error("ERREUR DANS LE BLOC CATCH: La redirection n'a pas eu lieu.", err); // Erreur
   }
+  }
+  
   return (
     <div className="flex flex-col flex-1 lg:w-1/2 w-full">
       <div className="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
@@ -59,7 +91,7 @@ export default function SignInForm() {
               </div>
             </div>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <form onSubmit={form.handleSubmit(handleLogin)} className="space-y-8">
                 <FormField
                   control={form.control}
                   name="email"

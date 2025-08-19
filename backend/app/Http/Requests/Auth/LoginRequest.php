@@ -41,14 +41,20 @@ class LoginRequest extends FormRequest
     {
         // dd('ok_auth');
         $this->ensureIsNotRateLimited();
-        if (! Auth::attempt($this->only('user_email', 'user_pass'), $this->boolean('remember'))) {
+          // On prépare les identifiants avec le bon nom de colonne pour WordPress
+        $credentials = [
+            'user_email' => $this->input('email'),
+            'password'   => $this->input('password'),
+        ];
+        dd($credentials);
+        // On tente la connexion avec les bons identifiants
+        if (! Auth::attempt($credentials, $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
-            throw ValidationException::withMessages([
-                'user_email' => __('auth.failed'),
-            ]);
-            // dd('Authentication failed'); // Debugging line to check authentication failure
-        }
 
+            throw ValidationException::withMessages([
+                'email' => __('auth.failed'),
+            ]);
+        }
         RateLimiter::clear($this->throttleKey());
     }
 
