@@ -42,37 +42,35 @@ return [
             'synchronous' => null,
         ],
 
-        // 'mysql' => [
-        //     'driver' => 'mysql',
-        //     'url' => env('DB_URL'),
-        //     'host' => env('DB_HOST', '127.0.0.1'),
-        //     'port' => env('DB_PORT', '3306'),
-        //     'database' => env('DB_DATABASE', 'laravel'),
-        //     'username' => env('DB_USERNAME', 'root'),
-        //     'password' => env('DB_PASSWORD', ''),
-        //     'unix_socket' => env('DB_SOCKET', ''),
-        //     'charset' => env('DB_CHARSET', 'utf8mb4'),
-        //     'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
-        //     'prefix' => '',
-        //     'prefix_indexes' => true,
-        //     'strict' => true,
-        //     'engine' => null,
-        //     'options' => extension_loaded('pdo_mysql') ? array_filter([
-        //         PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-        //     ]) : [],
-        // ],
+        'mysql' => [
+            'driver' => 'mysql',
+            'url' => env('DB_URL'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'laravel_app'),
+            'username' => env('DB_USERNAME', 'root'),
+            'password' => env('DB_PASSWORD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => env('DB_CHARSET', 'utf8mb4'),
+            'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
         'wordpress' => [ // for WordPress database (used by Corcel)
-        'driver'    => 'mysql',
-        'host'      => 'localhost',
-        'database'  => 'chougdali-travel-db-wp',
-        'username'  => 'root',
-        'password'  => '',
-        'charset'   => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-        'prefix'    => 'wp_',
-        'strict'    => false,
-        'engine'    => null,
-    ],
+            'driver' => 'mysql',
+            'host' => env('WP_DB_HOST', '127.0.0.1'),
+            'database' => env('WP_DB_DATABASE', 'chougdalitrave'), // Use the new .env variable
+            'username' => env('WP_DB_USERNAME', 'root'),           // Use the new .env variable
+            'password' => env('WP_DB_PASSWORD', ''),              // Use the new .env variable
+            'prefix' => 'wp_',
+            'strict' => false,
+            'engine' => null,
+        ],
 
         'mariadb' => [
             'driver' => 'mariadb',
@@ -159,7 +157,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-database-'),
+            'prefix' => env('REDIS_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')) . '-database-'),
             'persistent' => env('REDIS_PERSISTENT', false),
         ],
 

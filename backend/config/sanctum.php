@@ -21,7 +21,13 @@ return [
         Sanctum::currentApplicationUrlWithPort(),
         env('FRONTEND_URL') ? ','.parse_url(env('FRONTEND_URL'), PHP_URL_HOST) : ''
     ))),
+ /*
+    |--------------------------------------------------------------------------
+    | Sanctum Token Model
+    |--------------------------------------------------------------------------
+    */
 
+    'token_model' => App\Models\Sanctum\PersonalAccessToken::class,
     /*
     |--------------------------------------------------------------------------
     | Sanctum Guards
