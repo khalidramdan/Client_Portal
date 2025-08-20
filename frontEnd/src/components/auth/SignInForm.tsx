@@ -20,7 +20,7 @@ import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 //this is the form validation schema
 const formSchema = z.object({
-  email: z.string().email().min(2).max(30),
+  email: z.string().email().min(2).max(50),
   password: z.string().min(8).max(30),
 })
 export default function SignInForm() {
@@ -35,30 +35,18 @@ export default function SignInForm() {
 
   // 2. Define a submit handler.
  const handleLogin = async (data: z.infer<typeof formSchema>) => {
-    // Les valeurs sont dans `data.email` et `data.password`
-    // console.log('Données envoyées à Laravel:', data);
-
     try {
     const access_token = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-    console.log(access_token); // Étape 1
-    const response = await axios.post('http://localhost:8000/api/login', {
+    const response = await axios.post('http://localhost:8000/login', {
       email: data.email,
       password: data.password,
     });
-
-    console.log('2. Réponse reçue du serveur:', response.data); // Étape 2
-
     const { user } = response.data;
-
     if (access_token) {
       localStorage.setItem('user', JSON.stringify(user));
       // localStorage.setItem('access_token', access_token);
-      Cookies.set('access_token', access_token, { expires: 7 });
-      console.log('3. Token sauvegardé. Préparation de la redirection...'); // Étape 3
-
+      Cookies.set('access_token', access_token, { expires: 7 }); 
       router.push('/dashboard');
-      
-      console.log('4. Redirection vers /dashboard demandée.'); // Étape 4
     } else {
       console.error("ERREUR: Le token n'a pas été reçu du serveur.");
     }
@@ -112,7 +100,7 @@ export default function SignInForm() {
                     <FormItem>
                       <FormLabel>Password :</FormLabel>
                       <FormControl>
-                        <Input placeholder="Password" {...field} />
+                        <Input placeholder="Password" {...field} type="password"/>
                       </FormControl>
                       <FormMessage className="valaidation_color"/>
                     </FormItem>
