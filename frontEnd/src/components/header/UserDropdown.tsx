@@ -20,6 +20,7 @@ export default function UserDropdown() {
   }
   const router = useRouter();
   const { user } = useAuth();
+  console.log('UserDropdown user:', user);
    if (!user) {
     return <div>Loading...</div>; // Or return null if you want to show nothing
   }

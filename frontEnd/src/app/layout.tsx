@@ -1,9 +1,7 @@
 import { Outfit } from 'next/font/google';
 import './globals.css';
-
-import { SidebarProvider } from '@/context/SidebarContext';
 import { ThemeProvider } from '@/context/ThemeContext';
-import AuthLayout from './(full-width-pages)/(auth)/layout';
+import { SidebarProvider } from '@/context/SidebarContext';
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -15,7 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    // Add suppressHydrationWarning here
+    <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.className} dark:bg-gray-900`}>
         <ThemeProvider>
           <SidebarProvider>{children}</SidebarProvider>

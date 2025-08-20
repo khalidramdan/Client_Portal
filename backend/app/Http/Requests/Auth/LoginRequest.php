@@ -27,8 +27,8 @@ class LoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_email' => ['required', 'string', 'email'],
-            'user_pass' => ['required', 'string'],
+            'email' => ['required', 'string', 'email'],
+            'password' => ['required', 'string'],
         ];
     }
 
@@ -39,15 +39,11 @@ class LoginRequest extends FormRequest
      */
     public function authenticate(): void
     {
-        // dd('ok_auth');
         $this->ensureIsNotRateLimited();
-          // On prépare les identifiants avec le bon nom de colonne pour WordPress
         $credentials = [
-            'user_email' => $this->input('email'),
+            'email' => $this->input('email'),
             'password'   => $this->input('password'),
         ];
-        dd($credentials);
-        // On tente la connexion avec les bons identifiants
         if (! Auth::attempt($credentials, $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
 
