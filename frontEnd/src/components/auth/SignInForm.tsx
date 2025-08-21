@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
-import Cookies from 'js-cookie';
 import {
   Form,
   FormControl,
@@ -18,6 +17,13 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
+import { useEffect } from 'react';
+// Set the base URL of your Laravel API
+axios.defaults.baseURL = "http://localhost:8000/";
+
+// Enable sending cookies with every request
+axios.defaults.withCredentials = true;
+axios.defaults.withXSRFToken=true;
 //this is the form validation schema
 const formSchema = z.object({
   email: z.string().email().min(2).max(50),
@@ -32,20 +38,16 @@ export default function SignInForm() {
       password: "",
     },
   })
-
-  // 2. Define a submit handler.
  const handleLogin = async (data: z.infer<typeof formSchema>) => {
-    try {
-    const access_token = await axios.get('http://localhost:8000/sanctum/csrf-cookie');
-    const response = await axios.post('http://localhost:8000/login', {
+   try {
+    await axios.get('sanctum/csrf-cookie');
+    const response = await axios.post('login', {
       email: data.email,
       password: data.password,
     });
     const { user } = response.data;
-    if (access_token) {
+    if (user) {
       localStorage.setItem('user', JSON.stringify(user));
-      // localStorage.setItem('access_token', access_token);
-      Cookies.set('access_token', access_token, { expires: 7 }); 
       router.push('/dashboard');
     } else {
       console.error("ERREUR: Le token n'a pas été reçu du serveur.");

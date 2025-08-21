@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 import { useRouter } from 'next/navigation';
-import Cookies from 'js-cookie';
+import  Cookies  from "js-cookie";
 import { useAuth } from "@/hooks/useAuth";
 export default function UserDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,6 @@ export default function UserDropdown() {
   }
   const router = useRouter();
   const { user } = useAuth();
-  console.log('UserDropdown user:', user);
    if (!user) {
     return <div>Loading...</div>; // Or return null if you want to show nothing
   }
@@ -154,9 +153,8 @@ export default function UserDropdown() {
         <button
           onClick={() => {
             localStorage.removeItem('user');
-            localStorage.removeItem('access_token');
-            Cookies.remove('access_token');
-
+            localStorage.removeItem('XSRF-TOKEN');
+            Cookies.remove('XSRF-TOKEN');
             // Redirect to the sign-in page
             router.push('/signin');
           }}
