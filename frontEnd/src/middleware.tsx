@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 // Cette fonction sera exécutée pour chaque requête correspondante
 export function middleware(request: NextRequest) {
   // 1. Récupérer le token depuis les cookies de la requête
-  const token = request.cookies.get('access_token');
+  const token = request.cookies.get('XSRF-TOKEN');
   const { pathname } = request.nextUrl;
 
   // 2. Si l'utilisateur n'est pas connecté et essaie d'accéder à une page protégée
