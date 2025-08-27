@@ -12,6 +12,8 @@ import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Languages, Check  } from 'lucide-react';
+import Link from "next/link";
+import BookingPopup from "../booking/page";
 // Define the props for the component for reusability
 interface ImageCardProps {
   imgSrc: string;
@@ -24,6 +26,7 @@ interface ImageCardProps {
   frensh:string;
   english:string;
   link:string;
+  buttonBooking:string;
 }
 export function ImageCard({
   imgSrc,
@@ -36,6 +39,7 @@ export function ImageCard({
   frensh,
   english,
   link,
+  buttonBooking,
 }: ImageCardProps) {
   return (
     <Card className="w-full max-w-sm overflow-hidden rounded-lg shadow-lg h-full">
@@ -70,9 +74,14 @@ export function ImageCard({
         </div>
       </CardContent>
       <CardFooter className="bg-muted/40 px-6 py-4">
-        <a href={link}  className="w-full">
-          {buttonText}
+        <div className="w-1/2">
+          <a href=""  className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg shadow-lg">
+              Show details
         </a>
+        </div>
+         <div className="w-1/2"> 
+          <BookingPopup />
+        </div>  
       </CardFooter>
     </Card>
   );
@@ -111,8 +120,6 @@ export default function Tours() {
               title={tour.post_title}
               description="A Fusion of Modern Art and Nature"
               content={tour.excerpt}
-              link={tour.url}
-              buttonText="View Details"
               arabic={tour.terms.s2a_dev_tours_languages.arabic}
               frensh={tour.terms.s2a_dev_tours_languages.frensh}
               english={tour.terms.s2a_dev_tours_languages.english}
