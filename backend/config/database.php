@@ -63,10 +63,10 @@ return [
         ],
         'wordpress' => [ // for WordPress database (used by Corcel)
             'driver' => 'mysql',
-            'host' => env('WP_DB_HOST', '127.0.0.1'),
-            'database' => env('WP_DB_DATABASE', 'chougdalitrave'), // Use the new .env variable
-            'username' => env('WP_DB_USERNAME', 'root'),           // Use the new .env variable
-            'password' => env('WP_DB_PASSWORD', ''),              // Use the new .env variable
+            'host' => env('WP_DB_HOST', 'srv480.hstgr.io'),
+            'database' => env('WP_DB_DATABASE', 'u640280492_chougdalitrave'), // Use the new .env variable
+            'username' => env('WP_DB_USERNAME', 'u640280492_chougdalitrave'),           // Use the new .env variable
+            'password' => env('WP_DB_PASSWORD', '7tG>u?Qb'),              // Use the new .env variable
             'prefix' => 'wp_',
             'strict' => false,
             'engine' => null,
