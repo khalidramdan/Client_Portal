@@ -95,6 +95,7 @@ useEffect(() => {
             total
         }
         localStorage.setItem("bookingData",JSON.stringify(bookingData))
+        window.location.href = '/payment';
     }
     return (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
