@@ -15,8 +15,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
         return response()->json(['users' => $users]);
     });
     Route::get('/tours',[TourController::class,'index'])->name('tours');
+    Route::get('/tours/{id}',[TourController::class,'getTourById']);
 });
-
 // Route::get('/test',function (){
 //     return DB::connection('wordpress')->table('s2a_dev_transfers')->get();
 

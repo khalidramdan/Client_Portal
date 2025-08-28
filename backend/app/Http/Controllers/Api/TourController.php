@@ -13,4 +13,8 @@ class TourController extends Controller
         $tours = Post::where('post_type','tours')->status('publish')->get();
         return response()->json($tours);
     }
+    public function getTourById($id){
+        $tour = Post::where('ID',$id)->where('post_type','tours')->status('publish')->get();
+        return response()->json($tour);
+    }
 }

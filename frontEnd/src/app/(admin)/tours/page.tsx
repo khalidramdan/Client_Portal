@@ -27,6 +27,7 @@ interface ImageCardProps {
   english:string;
   link:string;
   buttonBooking:string;
+  tourdetails:{}
 }
 export function ImageCard({
   imgSrc,
@@ -34,12 +35,10 @@ export function ImageCard({
   title,
   description,
   content,
-  buttonText,
   arabic,
   frensh,
   english,
-  link,
-  buttonBooking,
+  tourdetails
 }: ImageCardProps) {
   return (
     <Card className="w-full max-w-sm overflow-hidden rounded-lg shadow-lg h-full">
@@ -75,9 +74,9 @@ export function ImageCard({
       </CardContent>
       <CardFooter className="bg-muted/40 px-6 py-4">
         <div className="w-1/2">
-          <a href=""  className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg shadow-lg">
+          <Link href={{pathname: "/tours/tourdetails", query: {id : tourdetails.ID}}} className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg shadow-lg">
               Show details
-        </a>
+        </Link>
         </div>
          <div className="w-1/2"> 
           <BookingPopup />
@@ -123,6 +122,7 @@ export default function Tours() {
               arabic={tour.terms.s2a_dev_tours_languages.arabic}
               frensh={tour.terms.s2a_dev_tours_languages.frensh}
               english={tour.terms.s2a_dev_tours_languages.english}
+              tourdetails={tour}
             />
           </div>
         ))
